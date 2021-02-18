@@ -18,7 +18,3 @@ body {
 .r270 {
   transform: rotate(270deg);
 }
-
-.left:active {
-  transform: rotate(-90deg);
-}
