@@ -14,4 +14,21 @@ function turnCar(event) {
 
 window.addEventListener('keydown', turnCar);
 
-window.addEventListener('keydown', startCar);
+var currentNum = 0;
+
+function startCar() {
+  if (currentNum === 1100) {
+    currentNum = 0;
+  } else {
+    currentNum += 10;
+    $car.style.marginLeft = currentNum + 'px';
+  }
+}
+
+function spacePress(event) {
+  if (event.code === 'Space') {
+    setInterval(startCar, 16);
+  }
+}
+
+window.addEventListener('keydown', spacePress);
