@@ -13,3 +13,5 @@ function turnCar(event) {
 }
 
 window.addEventListener('keydown', turnCar);
+
+window.addEventListener('keydown', startCar);
