@@ -14,22 +14,33 @@ function turnCar(event) {
 
 window.addEventListener('keydown', turnCar);
 
-var xAxis = 0;
-var yAxis = 0;
+var left;
+var right;
+var up;
+var down;
 
 function startCar() {
+  $car.style.position = 'absolute';
   if ($car.className === 'car') {
-    xAxis += 10;
-    $car.style.marginLeft = xAxis + 'px';
+    left += 1;
+    right = window.innerWidth - 1;
+    $car.style.left = left + 'px';
+    $car.style.right = right + 'px';
   } else if ($car.className === 'car r180') {
-    xAxis -= 10;
-    $car.style.marginLeft = xAxis + 'px';
+    left -= 1;
+    right += 1;
+    $car.style.right = right + 'px';
+    $car.style.left = left + 'px';
   } else if ($car.className === 'car r90') {
-    yAxis += 10;
-    $car.style.marginTop = yAxis + 'px';
+    up += 1;
+    down -= 1;
+    $car.style.top = up + 'px';
+    $car.style.bottom = down + 'px';
   } else {
-    yAxis -= 10;
-    $car.style.marginTop = yAxis + 'px';
+    up -= 1;
+    down += 1;
+    $car.style.bottom = down + 'px';
+    $car.style.top = up + 'px';
   }
 }
 
