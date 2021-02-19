@@ -25,9 +25,16 @@ function startCar() {
   }
 }
 
+var intID;
+
 function spacePress(event) {
   if (event.code === 'Space') {
-    setInterval(startCar, 16);
+    if (intID) {
+      clearInterval(intID);
+      intID = undefined;
+    } else {
+      intID = setInterval(startCar, 16);
+    }
   }
 }
 
